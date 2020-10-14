@@ -1,30 +1,40 @@
 <script>
   import Pagination from "./Pagination.svelte";
   import MinMaxMinutes from "./MinMaxMinutes.svelte";
-  import GenresChips from "./GenresChips.svelte";
   import SortRadios from "./SortRadios.svelte";
   import ReleaseDates from "./ReleaseDates.svelte";
   import Title from "./Title.svelte";
-  import BtnSuccess from "./BtnSuccess.svelte";
-  import { API_KEY, searchParams, genresObject, loadMovies } from "../stores";
+  import Buttons from "./Buttons.svelte";
+  import { onMount } from "svelte";
+  import {
+    API_KEY,
+    searchParams,
+    loadMovies,
+    genres,
+    modalOpen
+  } from "../stores";
+  import GenresChips from "./GenresChips.svelte";
 
   let minMinutes = "";
   let maxMinutes = "";
   let filterParam = 1;
   let releaseFrom = "";
   let releaseUntil = "";
+  let genresObject = [];
 
-  // url to do complicated search
   let discoverMoviesUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&`;
 
-  $: genStr = $genresObject.then(data => data.filter(item => item.active));
+  onMount(async () => {
+    genresObject = await $genres;
+  });
 
   async function handleSubmit(e) {
     $searchParams["with_runtime.gte"] = minMinutes;
     $searchParams["with_runtime.lte"] = maxMinutes;
-    $searchParams["with_genres"] = await genStr.then(data =>
-      data.map(item => item.id).join("|")
-    );
+    $searchParams["with_genres"] = await genresObject
+      .filter(item => item.active)
+      .map(item => item.id)
+      .join("|");
     switch (filterParam) {
       case 1:
         $searchParams["sort_by"] = "popularity.desc";
@@ -41,25 +51,21 @@
     $searchParams["release_date.gte"] = releaseFrom;
     $searchParams["release_date.lte"] = releaseUntil;
     await loadMovies(discoverMoviesUrl, $searchParams);
+    $modalOpen.open = !$modalOpen.open;
   }
 </script>
 
 <style>
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-  }
+
 </style>
 
-<div class="featured col-md-6">
-  <Title>Search By Features</Title>
+<div class="featured col-9">
   <form on:submit|preventDefault={handleSubmit}>
     <GenresChips />
     <MinMaxMinutes bind:minMinutes bind:maxMinutes />
     <SortRadios bind:filterParam />
     <ReleaseDates bind:releaseFrom bind:releaseUntil />
-    <BtnSuccess>Search</BtnSuccess>
+    <Buttons>Search</Buttons>
   </form>
-  <Pagination params={searchParams} url={discoverMoviesUrl} />
+  <!-- <Pagination params={searchParams} url={discoverMoviesUrl} /> -->
 </div>

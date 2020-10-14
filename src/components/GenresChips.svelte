@@ -1,15 +1,18 @@
 <script>
-  import { genresObject } from "../stores";
+  import { API_KEY, genres } from "../stores";
+  import { onMount } from "svelte";
 
-  async function toggleGenre(GenreId) {
-    await genresObject.update(data =>
-      data.then(data => {
-        data.map(item =>
-          item.id === GenreId ? (item.active = !item.active) : ""
-        );
-        return data;
-      })
+  let genresObject = [];
+
+  onMount(async () => {
+    genresObject = await $genres;
+  });
+
+  function toggleGenre(GenreId) {
+    genresObject.map(item =>
+      item.id === GenreId ? (item.active = !item.active) : ""
     );
+    genresObject = [...genresObject];
   }
 </script>
 
@@ -28,18 +31,15 @@
 <div class="genres form-group">
   <p>Search Genres:</p>
   <ul>
-    {#await $genresObject}
-      loading
-    {:then data}
-      {#each data as item}
-        <li
-          on:click={toggleGenre(item.id)}
-          class="btn-sm"
-          class:btn-info={!item.active}
-          class:btn-warning={item.active}>
-          {item.name}
-        </li>
-      {/each}
-    {/await}
+    {#each genresObject as item}
+      <li
+        on:click={toggleGenre(item.id)}
+        class="btn-sm"
+        class:btn-info={!item.active}
+        class:btn-warning={item.active}>
+        {item.name}
+      </li>
+    {/each}
+
   </ul>
 </div>

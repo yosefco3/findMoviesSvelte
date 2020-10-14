@@ -1,9 +1,15 @@
 <script>
   import Pagination from "./Pagination.svelte";
-  import { API_KEY, SimpleSearchParams, loadMovies } from "../stores";
+  import {
+    API_KEY,
+    SimpleSearchParams,
+    loadMovies,
+    modalOpen,
+    result
+  } from "../stores";
   import Title from "./Title.svelte";
   import SearchText from "./SearchText.svelte";
-  import BtnSuccess from "./BtnSuccess.svelte";
+  import Buttons from "./Buttons.svelte";
 
   let error = false;
   let searchText = "";
@@ -15,6 +21,7 @@
     if (searchText !== "") {
       $SimpleSearchParams["query"] = searchText;
       await loadMovies(searchMoviesUrl, $SimpleSearchParams);
+      $modalOpen.open = !$modalOpen.open;
     } else {
       error = true;
     }
@@ -27,16 +34,18 @@
     flex-direction: column;
     justify-content: left;
   }
+  p {
+    color: red;
+  }
 </style>
 
 <div class="">
-  <Title>Search By Text</Title>
   <form on:submit|preventDefault={handleSubmit}>
     <SearchText bind:searchText />
-    <BtnSuccess>Search</BtnSuccess>
+    <Buttons>Search</Buttons>
   </form>
   {#if error}
     <p>You should give a query search!</p>
   {/if}
-  <Pagination params={SimpleSearchParams} url={searchMoviesUrl} />
+  <!-- <Pagination params={SimpleSearchParams} url={searchMoviesUrl} /> -->
 </div>

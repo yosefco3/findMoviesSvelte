@@ -1,9 +1,7 @@
 <script>
   import Hero from "./components/Hero.svelte";
-  import SearchBox from "./components/SearchBox.svelte";
+  import Grid from "./components/Grid.svelte";
 </script>
 
 <Hero />
-<div class="container">
-  <SearchBox />
-</div>
+<Grid />

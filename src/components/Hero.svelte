@@ -1,10 +1,12 @@
 <script>
+  import SearchBox from "./SearchBox.svelte";
+  import Modal from "./Modal.svelte";
   let src = "../images/db.svg";
 </script>
 
 <style>
   .jumbotron {
-    color: white;
+    color: cornflowerblue;
     background-image: url("../images/felix-mooneeram-evlkOfkQ5rE-unsplash.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -14,6 +16,10 @@
   }
   .db-img {
     width: 80px;
+    fill: cornflowerblue;
+  }
+  .up {
+    margin-top: -100px;
   }
 </style>
 
@@ -24,7 +30,11 @@
     <p>Search a movie by text or by features.</p>
     <!-- foto by Felix Mooneeram
       from unsplash -->
-    <img {src} class="db-img" alt="db image" />
+    <img {src} alt="db image" class="db-img" />
+
+    <div class="search-buttons mt-3 up">
+      <SearchBox />
+    </div>
 
   </div>
 

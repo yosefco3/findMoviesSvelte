@@ -12,7 +12,7 @@
       class="form-control ml-3"
       id="release-from" />
   </div>
-  <div class="form-group mx-sm-3 d-flex">
+  <div class="form-group mx-sm-3 d-flex mt-3">
     <label for="release-until:">Release Until:</label>
     <input
       type="date"
