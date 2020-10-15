@@ -27,7 +27,7 @@
     <h1 class="display-4">Find Your Movie</h1>
     <!-- foto by Felix Mooneeram
       from unsplash -->
-    <img {src} alt="db image" class="db-img" />
+    <img {src} alt="db image" class="db-img my-2" />
 
     <div class="search-buttons mt-3 up">
       <SearchBox />
