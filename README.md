@@ -1,4 +1,7 @@
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# API_KEY
+
+To activate this project you should do a .env file with your API_KEY variable from TMbd in the root directory of the project.
 
 ---
 
