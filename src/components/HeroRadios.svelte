@@ -34,7 +34,7 @@
   /* the style is from here: */
   /* https://stackoverflow.com/questions/4253920/how-do-i-change-the-color-of-radio-buttons */
   /* answer of https://stackoverflow.com/users/2936345/jamied */
-  .box {
+  .hero-box {
     margin-top: 10vh;
   }
   .buttons {
@@ -63,7 +63,7 @@
   }
 </style>
 
-<div class="box">
+<div id="hero-box">
   <Title>Basic Search:</Title>
   <div class="buttons">
     {#each searchKinds as item, i}

@@ -15,6 +15,7 @@
       paramsResults["page"] += 1;
       let url = urlResult.split("&")[0] + "&";
       loadMovies(url, paramsResults);
+      scrollToGrid();
     } else {
       maxPagesError = true;
     }
@@ -27,10 +28,15 @@
       paramsResults["page"] -= 1;
       let url = urlResult.split("&")[0] + "&";
       loadMovies(url, paramsResults);
+      scrollToGrid();
     } else {
       zeroPagesError = true;
     }
   };
+
+  function scrollToGrid() {
+    document.querySelector("#hero-box").scrollIntoView({ behavior: "smooth" });
+  }
 </script>
 
 <style>

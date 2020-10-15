@@ -12,7 +12,8 @@
     genres_names = await gen
       .filter(x => genre_ids.includes(x.id))
       .map(x => x.name)
-      .slice(0, 3);
+      .slice(0, 3)
+      .join(", ");
   });
 </script>
 
