@@ -1,5 +1,5 @@
 <script>
-  import { modalOpen } from "../stores";
+  import { modalOpen } from "../../stores";
 
   let close = () => {
     $modalOpen.open = !$modalOpen.open;

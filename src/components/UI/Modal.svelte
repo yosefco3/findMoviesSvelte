@@ -1,5 +1,5 @@
 <script>
-  import { modalOpen } from "../stores";
+  import { modalOpen } from "../../stores";
   import Keydown from "svelte-keydown";
 
   $: largeWindow = $modalOpen.size === "lg";

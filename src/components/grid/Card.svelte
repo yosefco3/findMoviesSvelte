@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { genres } from "../stores";
+  import { genres } from "../../stores";
   export let src = "";
   export let title = "";
   export let genre_ids = "";

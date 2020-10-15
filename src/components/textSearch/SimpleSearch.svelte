@@ -1,15 +1,14 @@
 <script>
-  import Pagination from "./Pagination.svelte";
   import {
     API_KEY,
     simpleSearchParams,
     loadMovies,
     modalOpen,
     result
-  } from "../stores";
-  import Title from "./Title.svelte";
+  } from "../../stores";
+  import Title from "../UI/Title.svelte";
   import SearchText from "./SearchText.svelte";
-  import Buttons from "./Buttons.svelte";
+  import Buttons from "../UI/Buttons.svelte";
 
   let error = false;
   let searchText = "";
@@ -47,5 +46,4 @@
   {#if error}
     <p>You should give a query search!</p>
   {/if}
-  <!-- <Pagination params={simpleSearchParams} url={searchMoviesUrl} /> -->
 </div>

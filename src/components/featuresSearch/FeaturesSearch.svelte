@@ -1,10 +1,9 @@
 <script>
-  import Pagination from "./Pagination.svelte";
   import MinMaxMinutes from "./MinMaxMinutes.svelte";
   import SortRadios from "./SortRadios.svelte";
   import ReleaseDates from "./ReleaseDates.svelte";
-  import Title from "./Title.svelte";
-  import Buttons from "./Buttons.svelte";
+  import Title from "../UI/Title.svelte";
+  import Buttons from "../UI/Buttons.svelte";
   import { onMount } from "svelte";
   import {
     API_KEY,
@@ -12,7 +11,7 @@
     loadMovies,
     genres,
     modalOpen
-  } from "../stores";
+  } from "../../stores";
   import GenresChips from "./GenresChips.svelte";
 
   let minMinutes = "";
@@ -67,5 +66,4 @@
     <ReleaseDates bind:releaseFrom bind:releaseUntil />
     <Buttons>Search</Buttons>
   </form>
-  <!-- <Pagination params={searchParams} url={discoverMoviesUrl} /> -->
 </div>

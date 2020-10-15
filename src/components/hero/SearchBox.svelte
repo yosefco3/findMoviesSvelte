@@ -1,9 +1,9 @@
 <script>
-  import FeaturesSearch from "./FeaturesSearch.svelte";
-  import SimpleSearch from "./SimpleSearch.svelte";
-  import Modal from "./Modal.svelte";
-  import { modalOpen } from "../stores";
-  import Title from "./Title.svelte";
+  import FeaturesSearch from "../featuresSearch/FeaturesSearch.svelte";
+  import SimpleSearch from "../textSearch/SimpleSearch.svelte";
+  import Modal from "../UI/Modal.svelte";
+  import { modalOpen } from "../../stores";
+  import Title from "../UI/Title.svelte";
 
   let featuresSearch = () => {
     $modalOpen.size = "lg";

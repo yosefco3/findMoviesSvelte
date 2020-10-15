@@ -1,5 +1,5 @@
 <script>
-  import { loadMovies, result } from "../stores";
+  import { loadMovies, result } from "../../stores";
   import { onMount } from "svelte";
 
   export let paramsResults;

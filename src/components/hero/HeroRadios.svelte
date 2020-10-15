@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
-  import { basicSearchParams, API_KEY, loadMovies } from "../stores";
-  import Title from "./Title.svelte";
+  import { basicSearchParams, API_KEY, loadMovies } from "../../stores";
+  import Title from "../UI/Title.svelte";
   let discoverMoviesUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&`;
 
   export let filterParam = 1;

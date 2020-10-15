@@ -1,6 +1,6 @@
 <script>
   import Card from "./Card.svelte";
-  import { API_KEY, genres, result } from "../stores";
+  import { API_KEY, genres, result } from "../../stores";
   import Pagination from "./Pagination.svelte";
 
   let genresNames = "";

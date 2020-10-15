@@ -1,5 +1,5 @@
 <script>
-  import { API_KEY, genres } from "../stores";
+  import { API_KEY, genres } from "../../stores";
   import { onMount } from "svelte";
 
   let genresObject = [];
