@@ -1,40 +1,29 @@
 <script>
   export let filterParam;
+  let searches = ["Popularity", "Rating", "Revenues"];
 </script>
+
+<style>
+  .search {
+    margin-left: 10px !important;
+  }
+</style>
 
 <div class="form-group">
   <p>Sort by:</p>
-  <div class="form-inline mb-3">
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="popularity"
-        bind:group={filterParam}
-        value={1}
-        id="popularity" />
-      <label class="form-check-label" for="popularity">popularity</label>
-    </div>
-    <div class="form-check ml-3">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="rating"
-        bind:group={filterParam}
-        value={2}
-        id="rating" />
-      <label class="form-check-label" for="rating">rating</label>
-    </div>
-    <div class="form-check ml-3">
-      <input
-        class="form-check-input"
-        type="radio"
-        name="revenues"
-        bind:group={filterParam}
-        value={3}
-        id="revenues" />
-      <label class="form-check-label" for="revenues">revenues</label>
-    </div>
 
+  <div class="form-inline mb-3">
+    {#each searches as item, i}
+      <div class="form-check search">
+        <input
+          class="form-check-input"
+          type="radio"
+          name={item}
+          bind:group={filterParam}
+          value={i + 1}
+          id={item} />
+        <label class="form-check-label" for={item}>{item}</label>
+      </div>
+    {/each}
   </div>
 </div>

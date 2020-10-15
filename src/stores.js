@@ -2,7 +2,7 @@ import { writable } from 'svelte/store'
 
 export const API_KEY = process.env.API_KEY;
 
-const genreListUrl = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US&language=en-US&sort_by=popularity.desc&`;
+const genreListUrl = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US&`;
 
 
 const loadGenres=async ()=>{
@@ -12,10 +12,14 @@ const loadGenres=async ()=>{
     return await res.genres
 }
 
+// A store with the search movie results , populates by loadMovies function.
+// The first item is the Url , the second is the movies , the third is the params.
 export let result = writable([])
 
+// a store populates by genres.
 export let genres=writable(loadGenres())
 
+// a store wich says if modal is open, what his size , and what his name.
 export let modalOpen=writable({
                             open:false,
                             name:"",
@@ -34,10 +38,16 @@ export let searchParams = writable({
     "page":1
 });
 
-// store for query
-export let SimpleSearchParams= writable({
+// store for simple text query
+export let simpleSearchParams= writable({
     "query":"",
     "page":1,
+
+})
+
+export let basicSearchParams=writable({
+    page:1,
+    "sort_by":""
 
 })
 
@@ -58,7 +68,8 @@ export async function loadMovies(url,params) {
     // console.log(url)
     let res= await fetchUrl(url)
     // console.log(res)
-    res = await [url,res]
+    res = await [url,res,params]
+    console.log(res)
     await result.set(res)
 };
 

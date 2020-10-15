@@ -12,8 +12,8 @@ body {
 	margin: 0;
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-	background-color: darkslategrey;
-	color: cornflowerblue;
+	background-color: rgb(0, 6, 26);
+	color:orangered;
 }
 
 

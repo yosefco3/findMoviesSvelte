@@ -13,9 +13,14 @@
     display: flex;
     justify-content: space-between;
   }
+
+  /* @media (max-width: 900px) { */
+  /* .buttons { */
+  /* } */
+  /* } */
 </style>
 
-<div class="buttons">
+<div class="buttons form-group">
   <button class="btn btn-danger btn" type="reset" on:click={close}>
     Close
   </button>

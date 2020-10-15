@@ -2,7 +2,7 @@
   import Pagination from "./Pagination.svelte";
   import {
     API_KEY,
-    SimpleSearchParams,
+    simpleSearchParams,
     loadMovies,
     modalOpen,
     result
@@ -19,8 +19,8 @@
 
   async function handleSubmit() {
     if (searchText !== "") {
-      $SimpleSearchParams["query"] = searchText;
-      await loadMovies(searchMoviesUrl, $SimpleSearchParams);
+      $simpleSearchParams["query"] = searchText;
+      await loadMovies(searchMoviesUrl, $simpleSearchParams);
       $modalOpen.open = !$modalOpen.open;
     } else {
       error = true;
@@ -47,5 +47,5 @@
   {#if error}
     <p>You should give a query search!</p>
   {/if}
-  <!-- <Pagination params={SimpleSearchParams} url={searchMoviesUrl} /> -->
+  <!-- <Pagination params={simpleSearchParams} url={searchMoviesUrl} /> -->
 </div>

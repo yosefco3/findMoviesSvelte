@@ -25,7 +25,11 @@
 
 <style>
   button {
-    background-color: cornflowerblue;
+    background-color: orangered;
+    border: none;
+  }
+  button:hover {
+    background-color: orange;
   }
   .buttons-container {
     display: flex;

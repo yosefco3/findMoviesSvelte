@@ -3,8 +3,24 @@
   export let releaseUntil;
 </script>
 
-<div class="form-inline">
-  <div class="form-group mx-sm-3 d-flex">
+<style>
+  #release-from,
+  #release-until {
+    display: block !important;
+    width: 40%;
+  }
+
+  @media (max-width: 900px) {
+    #release-from,
+    #release-until {
+      width: 80%;
+      display: block;
+    }
+  }
+</style>
+
+<div class="form">
+  <div class="form-group mx-sm-3">
     <label for="release-from">Release from:</label>
     <input
       type="date"
@@ -12,7 +28,7 @@
       class="form-control ml-3"
       id="release-from" />
   </div>
-  <div class="form-group mx-sm-3 d-flex mt-3">
+  <div class="form-group mx-sm-3 mt-3">
     <label for="release-until:">Release Until:</label>
     <input
       type="date"

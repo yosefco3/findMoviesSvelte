@@ -4,6 +4,7 @@
   export let src = "";
   export let title = "";
   export let genre_ids = "";
+  export let release_date = "";
 
   $: genres_names = "";
   onMount(async () => {
@@ -15,13 +16,24 @@
   });
 </script>
 
-<div class="card" style="width: 18rem;">
+<style>
+  .card-body {
+    background-color: black;
+    color: white;
+  }
+</style>
+
+<div class="card card-body flex-fill">
   <img class="card-img-top" {src} alt="Card image cap" />
   <div class="card-body">
     <h5 class="card-title">{title}</h5>
     <p class="card-text">{genres_names}</p>
   </div>
-  <!-- <ul class="list-group list-group-flush">
+  <div class="card-footer">
+    <small class="text-muted">Release Date: {release_date}</small>
+  </div>
+</div>
+<!-- <ul class="list-group list-group-flush">
     <li class="list-group-item">Cras justo odio</li>
     <li class="list-group-item">Dapibus ac facilisis in</li>
     <li class="list-group-item">Vestibulum at eros</li>
@@ -30,4 +42,3 @@
     <a href="#" class="card-link">Card link</a>
     <a href="#" class="card-link">Another link</a>
   </div> -->
-</div>
