@@ -24,7 +24,7 @@
       {#if moviesResult}
         {#each moviesResult as movie}
           {#if movie.poster_path}
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex my-4">
+            <div class="col-6 col-sm-4 col-lg-3 d-flex my-4">
               <Card
                 src={`${imageUrl}${movie.poster_path}`}
                 title={movie.title}

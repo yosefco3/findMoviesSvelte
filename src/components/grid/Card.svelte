@@ -31,6 +31,21 @@
     background-color: black;
     color: white;
   }
+  .card {
+    height: 110vh;
+  }
+
+  @media screen and (max-width: 960px) {
+    .card {
+      height: 105vh;
+    }
+  }
+  /* 
+  @media screen and (max-width: 720px) {
+    .card {
+      height: 130vh;
+    }
+  } */
 </style>
 
 <a href={`/movie/${id}`}>
@@ -38,11 +53,23 @@
     <img class="card-img-top" {src} alt="Card image cap" />
     <div class="card-body">
       <h5 class="card-title">{title}</h5>
-      <p class="card-text">{genres_names}</p>
-      <p class="card-text">Vote Average: {vote_average.slice(0, -1)}</p>
+      <p>
+        <small class="card-text">{genres_names}</small>
+      </p>
+      <p>
+        <small class="card-text">
+          Vote Average: {vote_average.slice(0, -1)}
+        </small>
+      </p>
+      <p>
+
+        <small class="text-muted">Release Date: {release_date}</small>
+
+      </p>
+
     </div>
     <div class="card-footer">
-      <small class="text-muted">Release Date: {release_date}</small>
+      <br />
     </div>
   </div>
 </a>
