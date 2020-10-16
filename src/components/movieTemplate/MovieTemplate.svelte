@@ -6,7 +6,7 @@
 
   let urlMovie = `https://api.themoviedb.org/3/movie/${params.id}?api_key=${API_KEY}&language=en-US`;
   let imageUrl = "https://image.tmdb.org/t/p/w500";
-  let urlActors = `http://api.themoviedb.org/3/movie/${params.id}/casts?api_key=${API_KEY}`;
+  let urlActors = `https://api.themoviedb.org/3/movie/${params.id}/casts?api_key=${API_KEY}`;
 
   $: movie = "";
   $: actors = "";
