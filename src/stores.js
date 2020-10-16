@@ -71,7 +71,7 @@ export async function loadMovies(url,params) {
     let res= await fetchUrl(url)
     // console.log(res)
     res = await [url,res,params]
-    console.log(res)
+    // console.log(res)
     await result.set(res)
 };
 

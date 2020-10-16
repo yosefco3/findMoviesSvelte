@@ -19,29 +19,12 @@
   }
 </style>
 
-<!-- 
-cast_id: 12
-​​​
-character: "Hua Mulan"
-​​​
-credit_id: "5a1f27efc3a3680b930821c6"
-​​​
-gender: 1
-​​​
-id: 122503
-​​​
-name: "Liu Yifei"
-​​​
-order: 0
-​​​
-profile_path: "/cL6JccAYqiZQEAIEFObEUC9LTt7.jpg" -->
 <div class="actors">
   <div class="container-fluid">
     <div class="row">
       {#each actors.cast as actor}
         {#if actor.profile_path}
           <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 d-flex">
-
             <div class="card flex-fill my-3 mx-3">
               <img
                 class="card-img-top"
@@ -58,7 +41,6 @@ profile_path: "/cL6JccAYqiZQEAIEFObEUC9LTt7.jpg" -->
                 </h5>
               </div>
             </div>
-
           </div>
         {/if}
       {/each}
