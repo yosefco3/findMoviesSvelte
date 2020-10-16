@@ -1,6 +1,7 @@
 <script>
   import SearchBox from "./SearchBox.svelte";
   import HeroRadios from "./HeroRadios.svelte";
+  import Grid from "../../components/grid/Grid.svelte";
 
   let src = "../images/db.svg";
 </script>
@@ -32,9 +33,7 @@
     <div class="search-buttons mt-3 up">
       <SearchBox />
     </div>
-
     <HeroRadios />
-
   </div>
-
 </div>
+<Grid />

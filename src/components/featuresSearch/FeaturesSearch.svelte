@@ -33,7 +33,7 @@
     $searchParams["with_genres"] = await genresObject
       .filter(item => item.active)
       .map(item => item.id)
-      .join("|");
+      .join(",");
     switch (filterParam) {
       case 1:
         $searchParams["sort_by"] = "popularity.desc";

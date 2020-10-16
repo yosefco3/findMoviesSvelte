@@ -29,7 +29,12 @@
                 src={`${imageUrl}${movie.poster_path}`}
                 title={movie.title}
                 genre_ids={movie.genre_ids}
-                release_date={movie.release_date} />
+                release_date={movie.release_date}
+                id={movie.id}
+                overview="{movie.overview};"
+                backdrop_path="{`${imageUrl}${movie.backdrop_path}`};"
+                original_language="{movie.original_language};"
+                vote_average="{movie.vote_average};" />
             </div>
           {/if}
         {/each}

@@ -15,6 +15,8 @@ const loadGenres=async ()=>{
 // A store with the search movie results , populates by loadMovies function.
 // The first item is the Url , the second is the movies , the third is the params.
 export let result = writable([])
+// 
+export let specificMovie = writable({})
 
 // a store populates by genres.
 export let genres=writable(loadGenres())
