@@ -12,15 +12,19 @@
     switch (filterParam) {
       case 1:
         $basicSearchParams["sort_by"] = "popularity.desc";
+        $basicSearchParams["page"] = 1;
         break;
       case 2:
         $basicSearchParams["sort_by"] = "vote_average.desc";
+        $basicSearchParams["page"] = 1;
         break;
       case 3:
         $basicSearchParams["sort_by"] = "revenue.desc";
+        $basicSearchParams["page"] = 1;
         break;
       default:
         $basicSearchParams["sort_by"] = "popularity.desc";
+        $basicSearchParams["page"] = 1;
     }
     await loadMovies(discoverMoviesUrl, $basicSearchParams);
   };
