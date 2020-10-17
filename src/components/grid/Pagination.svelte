@@ -10,8 +10,6 @@
 
   let nextPage = async () => {
     if (paramsResults["page"] < totalPages) {
-      // maxPagesError = false;
-      // zeroPagesError = false;
       paramsResults["page"] += 1;
       let url = urlResult.split("&")[0] + "&";
       loadMovies(url, paramsResults);
@@ -24,8 +22,6 @@
   let formerPage = async () => {
     if (paramsResults["page"] > 1) {
       console.log(paramsResults["page"]);
-      // maxPagesError = false;
-      // zeroPagesError = false;
       paramsResults["page"] -= 1;
       let url = urlResult.split("&")[0] + "&";
       loadMovies(url, paramsResults);
