@@ -54,7 +54,7 @@
   <p class="error">No more movies!</p>
 {/if}
 
-<div class="pagination my-5">
+<div class="pagination">
 
   <button class="btn btn-warning" on:click={formerPage}>
     <svg
