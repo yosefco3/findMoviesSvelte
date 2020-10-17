@@ -31,28 +31,13 @@
     background-color: black;
     color: white;
   }
-  /* .card { */
-  /* height: 110vh; */
-  /* } */
-
-  /* @media screen and (max-width: 960px) { */
-  /* .card { */
-  /* height: 105vh; */
-  /* } */
-  /* } */
-  /* 
-  @media screen and (max-width: 720px) {
-    .card {
-      height: 130vh;
-    }
-  } */
 </style>
 
 <a href={`/movie/${id}`}>
   <div class="card card-body flex-fill">
     <img class="card-img-top" {src} alt="Card image cap" />
     <div class="card-body">
-      <h5 class="card-title">{title}</h5>
+      <h5 id="card-title">{title.trim()}</h5>
       <p>
         <small class="card-text">{genres_names}</small>
       </p>

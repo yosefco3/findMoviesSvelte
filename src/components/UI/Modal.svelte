@@ -1,6 +1,7 @@
 <script>
   import { modalOpen } from "../../stores";
   import Keydown from "svelte-keydown";
+  import { fade } from "svelte/transition";
 
   $: largeWindow = $modalOpen.size === "lg";
   $: smallWindow = $modalOpen.size === "sm";
@@ -60,7 +61,7 @@
 <!--  https://www.udemy.com/share/101YaQA0sSeVxbTHo=/ -->
 
 <div class="modal-backdrop" on:click={toggle} />
-<div class="modal" class:sm={smallWindow}>
+<div class="modal" class:sm={smallWindow} transition:fade={{ duration: 500 }}>
   <slot name="title">
     <!-- title -->
   </slot>
