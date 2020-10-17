@@ -45,16 +45,11 @@
     display: flex;
     justify-content: center;
   }
-  .error {
-    display: flex;
-    justify-content: center;
+
+  button {
+    font-size: 2rem;
   }
 </style>
-
-<!-- 
-{#if maxPagesError || zeroPagesError}
-  <p class="error">No more movies!</p>
-{/if} -->
 
 <div class="pagination">
   {#if !zeroPages}
