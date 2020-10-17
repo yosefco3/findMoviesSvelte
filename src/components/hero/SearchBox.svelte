@@ -64,11 +64,3 @@
     </span>
   </Modal>
 {/if}
-
-<!-- 
-<button on:click={toggle}>here</button>
-{#if $openModal}
-  <Modal title="hhhh">
-    <h1 name="content">kkkkkkkkkkkkkkkkk</h1>
-  </Modal>
-{/if} -->
