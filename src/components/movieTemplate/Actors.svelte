@@ -24,7 +24,7 @@
     <div class="row">
       {#each actors.cast as actor}
         {#if actor.profile_path}
-          <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 d-flex">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
             <div class="card flex-fill my-3 mx-3">
               <img
                 class="card-img-top"
