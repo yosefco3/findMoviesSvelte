@@ -31,15 +31,15 @@
     background-color: black;
     color: white;
   }
-  .card {
-    height: 110vh;
-  }
+  /* .card { */
+  /* height: 110vh; */
+  /* } */
 
-  @media screen and (max-width: 960px) {
-    .card {
-      height: 105vh;
-    }
-  }
+  /* @media screen and (max-width: 960px) { */
+  /* .card { */
+  /* height: 105vh; */
+  /* } */
+  /* } */
   /* 
   @media screen and (max-width: 720px) {
     .card {
