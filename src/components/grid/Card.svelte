@@ -37,6 +37,7 @@
     color: white;
     display: flex;
     flex-direction: column;
+    min-height: 100% !important;
   }
   img {
     border-radius: 5px 5px 0 0;
