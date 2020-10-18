@@ -27,9 +27,29 @@
   a {
     text-decoration: none;
   }
-  .card-body {
+
+  .custom-card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
     background-color: black;
     color: white;
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+
+  /* On mouse-over, add a deeper shadow */
+  .custom-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  /* Add some padding inside the card container */
+  .text-container {
+    padding: 2px 16px;
   }
 
   .slide-top {
@@ -71,27 +91,21 @@
 </style>
 
 <a href={`/movie/${id}`}>
-  <div class="card card-body flex-fill slide-top">
-    <img class="card-img-top" {src} alt="Card image cap" />
-    <div class="card-body">
-      <h5 id="card-title">{title.trim()}</h5>
-      <p>
-        <small class="card-text">{genres_names}</small>
-      </p>
+  <div class="custom-card slide-top">
+    <img {src} alt="card img" style="width:100%" />
+    <div class="text-container">
+      <h4>
+        <b>{title.trim()}</b>
+      </h4>
+      <p>{genres_names}</p>
       <p>
         <small class="card-text">
           Vote Average: {vote_average.slice(0, -1)}
         </small>
       </p>
       <p>
-
         <small class="text-muted">Release Date: {release_date}</small>
-
       </p>
-
-    </div>
-    <div class="card-footer">
-      <br />
     </div>
   </div>
 </a>
